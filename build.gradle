@@ -6,7 +6,6 @@ plugins {
 apply plugin: 'java'
 apply plugin: 'com.github.johnrengelman.shadow'
 
-
 shadowJar {
     mergeServiceFiles()
 }
@@ -25,8 +24,18 @@ task fatJar(type: Jar) {
                 'Main-Class': 'Main'
     }
     baseName = project.name + '-all'
-//    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
     with jar
+}
+
+task stage(dependsOn: ['build', 'clean'])
+build
+
+//отключить тесты при задаче stage
+gradle.taskGraph.whenReady {
+    taskGraph ->
+        if (taskGraph.hasTask(stage)) {
+            test.enabled = false
+        }
 }
 
 group 'com.gmail.leonidov.lex'
@@ -42,8 +51,6 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
 }
-
-
 
 test {
     useJUnitPlatform()
