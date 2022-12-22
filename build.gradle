@@ -1,0 +1,50 @@
+plugins {
+    id 'java'
+    id("com.github.johnrengelman.shadow") version "4.0.1"
+}
+
+apply plugin: 'java'
+apply plugin: 'com.github.johnrengelman.shadow'
+
+
+shadowJar {
+    mergeServiceFiles()
+}
+
+jar {
+    manifest() {
+        attributes(
+                'Main-Class': 'Main'
+        )
+    }
+}
+
+task fatJar(type: Jar) {
+    manifest() {
+        attributes 'Implementation-Title': 'Gradle Jar File Example',
+                'Main-Class': 'Main'
+    }
+    baseName = project.name + '-all'
+//    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+group 'com.gmail.leonidov.lex'
+version '1.0'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    implementation 'com.gmail.leonidov.lex:connect:+'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
+}
+
+
+
+test {
+    useJUnitPlatform()
+}
