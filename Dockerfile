@@ -21,5 +21,3 @@ ENTRYPOINT ["java","-jar","/calculator-1.0.jar"]
 #java -jar calculator-1.0.jar
 
 # docker run --net=host calculator-1.0
-
-# apiKey = '5a31b048-f3f6-44a1-898b-fe99a1d87831'

@@ -41,13 +41,22 @@ gradle.taskGraph.whenReady {
 group 'com.gmail.leonidov.lex'
 version '1.0'
 
-repositories {
-    mavenCentral()
-    mavenLocal()
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
 }
 
+//repositories {
+//    mavenCentral()
+//    mavenLocal()
+//}
+
 dependencies {
-    implementation 'com.gmail.leonidov.lex:connect:+'
+//    implementation 'com.gmail.leonidov.lex:connect:+'
+    implementation 'com.github.blckRbbit:connect:v1.0.4'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
 }

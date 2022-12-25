@@ -153,6 +153,6 @@ public class ArithmeticExpressionValidatorTest {
     @Test
     void validateWhenExpressedSymbol() {
         ArithmeticExpressionValidator validator = new ArithmeticExpressionValidator("(12345670O)+-*/89");
-        assertThrows(UnexpectedCharacterException.class, validator::validate);
+        assertFalse(validator::validate);
     }
 }
