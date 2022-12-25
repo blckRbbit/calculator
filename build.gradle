@@ -28,7 +28,7 @@ task fatJar(type: Jar) {
 }
 
 task stage(dependsOn: ['build', 'clean'])
-build
+shadowJar
 
 //отключить тесты при задаче stage
 gradle.taskGraph.whenReady {
