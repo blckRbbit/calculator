@@ -21,3 +21,5 @@ ENTRYPOINT ["java","-jar","/calculator-1.0.jar"]
 #java -jar calculator-1.0.jar
 
 # docker run --net=host calculator-1.0
+
+# web: java -jar -Dport=$PORT build/libs/calculator-1.0.jar
