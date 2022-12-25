@@ -1,0 +1,6 @@
+rootProject.name = 'calculator'
+//
+//include ':connect'
+//project(':connect').projectDir = new File('D:\\code\\javaProjects\\independently\\TestTasks\\connect')
+
+

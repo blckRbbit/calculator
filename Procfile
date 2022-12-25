@@ -1,0 +1,1 @@
+web: java -jar -Dport=$PORT build/libs/calculator-1.0.jar
