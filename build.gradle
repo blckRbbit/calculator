@@ -28,7 +28,7 @@ task fatJar(type: Jar) {
 }
 
 //task stage(dependsOn: ['build', 'clean', 'shadowJar'])
-task stage(dependsOn: ['build'])
+task stage(dependsOn: ['build', 'shadowJar'])
 build
 
 //отключить тесты при задаче stage

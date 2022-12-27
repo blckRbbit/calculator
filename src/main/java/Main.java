@@ -17,8 +17,8 @@ public class Main {
 
         try (ServerSocket server = new ServerSocket(PORT)) {
             System.out.println("Server started!");
+            Connect connect = new Connect(server);
             while (true) {
-                Connect connect = new Connect(server);
                 new Thread(() -> {
                     String response;
                     try {
