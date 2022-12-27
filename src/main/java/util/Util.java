@@ -32,7 +32,7 @@ public class Util {
 
     public static int getPort() {
         int port = Integer.parseInt(System.getenv("PORT"));
-        System.out.printf("PORT: %s", port);
+        System.out.printf("PORT: %s%n", port);
         return port;
 //        return Integer.parseInt(get(PORT));
     }
