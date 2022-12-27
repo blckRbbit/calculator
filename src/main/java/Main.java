@@ -23,6 +23,10 @@ public class Main {
                     String response;
                     try {
                         String request = connect.read();
+                        if (request==null) {
+                            System.out.println("Waiting...");
+                            return;
+                        }
                         System.err.printf("Task:%n %s%n", request);
                         if (request.equalsIgnoreCase("q")) {
                             response = "Thanks for using the app! Goodbye...";
