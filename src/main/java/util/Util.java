@@ -31,7 +31,8 @@ public class Util {
     }
 
     public static int getPort() {
-        int port = System.getenv("PORT")!= null? Integer.parseInt(System.getenv("PORT")) : Integer.parseInt(get(PORT));
+        int port = System.getenv("PORT")!= null ?
+                Integer.parseInt(System.getenv("PORT")) : Integer.parseInt(get(PORT));
         System.out.printf("PORT: %s%n", port);
         return port;
 //        return Integer.parseInt(get(PORT));
