@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -Dserver.port=$PORT -jar build/libs/calculator-1.0.jar
+web: java $JAVA_OPTS -Dserver.port=8007 -jar build/libs/calculator-1.0.jar
