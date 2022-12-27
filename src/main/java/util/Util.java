@@ -11,8 +11,8 @@ public class Util {
     private static final Properties PROPERTIES = new Properties();
     private static final String SEPARATOR_KEY = "app.separator";
     private static final String HOST = "app.host";
-    private static final String PORT = "app.port";
-
+//    private static final String PORT = "app.port";
+    private static final String PORT = "server.port";
     private static final String PACKAGE = "app.package";
     private static final String PACKAGE_SEPARATOR = "app.separator.package";
     private static final String DIR_SEPARATOR = "app.separator.dir";
